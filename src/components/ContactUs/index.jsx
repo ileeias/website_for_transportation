@@ -4,6 +4,8 @@ import styles from './ContactUs.module.css';
 export default function ContactUs() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [origin, setOrigin] = useState('');
+  const [destination, setDestination] = useState('');
   const [info, setInfo] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -14,7 +16,7 @@ export default function ContactUs() {
     e.preventDefault();
     setLoading(true);
 
-    const text = `🚀 Новая заявка!\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📝 Доп информация: ${info}`;
+    const text = `🚀 Новая заявка!\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📨 Откуда: ${origin}\n📬 Куда: ${destination}\n📝 Инфо по грузу: ${info}`;
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
     try {
@@ -32,6 +34,8 @@ export default function ContactUs() {
         alert('Заявка отправлена!');
         setName('');
         setPhone('');
+        setOrigin('');
+        setDestination('');
         setInfo('');
       }
     } catch (error) {
@@ -66,7 +70,23 @@ export default function ContactUs() {
           />
           <input
             type="text"
-            placeholder="Доп информация"
+            placeholder="Откуда"
+            value={origin}
+            onChange={(e) => setOrigin(e.target.value)}
+            className={styles.input}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Куда"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+            className={styles.input}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Описание: вес груза и тип"
             value={info}
             onChange={(e) => setInfo(e.target.value)}
             className={styles.input}
