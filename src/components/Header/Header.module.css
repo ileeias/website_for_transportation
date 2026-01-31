@@ -1,0 +1,66 @@
+.header {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  position: fixed;
+  padding: 10px 0px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow)
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--logo-color);
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.phone {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.callbackBtn {
+  background-color: var(--button-color);
+  color: var(--white);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid var(--border-top);
+}
+
+.navMenu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 16px;
+}
+
+.navMenu a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navMenu a:hover {
+  color: var(--green-hover);
+}
