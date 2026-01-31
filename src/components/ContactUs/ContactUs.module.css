@@ -8,6 +8,7 @@
   margin: 0 auto;
   padding: 24px;
   background: var(--bg-form-color);
+  border-radius: 10px;
 }
 .application_form {
   display: flex;
@@ -55,4 +56,30 @@
 .button:disabled {
   background-color: var(--disabled-color);
   cursor: not-allowed;
+}
+@media (max-width: 768px) {
+  .application_form {
+    flex-direction: column;   
+    gap: 20px;                
+    align-items: center;      
+  }
+
+  .form {
+    width: 90%;       
+    padding: 16px;
+  }
+
+  .input {
+    width: 100%;              
+    max-width: 320px;   
+  }
+
+  .button {
+    width: 100%;       
+    max-width: 320px;
+  }
+
+  .title {
+    font-size: 18px;    
+  }
 }
